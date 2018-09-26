@@ -4,10 +4,16 @@ public class ArrayDemo {
   public static void main(String[] args) {
     int[] ary = {1, 2, 3, 4};
     print1DArray(ary); //returns [1, 2, 3, 4]
+    int[] ary2 = {-1, 0, };
+    print1DArray(ary2); //returns [-1, 0]
+    int[] ary3 = {};
+    print1DArray(ary3); //returns []
 
     int[][] arry = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}; // returns [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     print2DArray(arry);
-    
+    int[][] arry2 = {{}, {}, {1, 1}}; // returns [[], [], [1, 1]]
+    print2DArray(arry2);
+
   }
 
   public static void print1DArray(int[] ary) { //0a. Make a function to print a 1D array of ints.
@@ -27,6 +33,9 @@ public class ArrayDemo {
     System.out.print("[[");
     String tempOutput = "";
     for (int x = 0; x < arry.length; x++) {
+      if (arry[x].length == 0) {
+        tempOutput += "], [";
+      }
       for (int y = 0; y < arry[x].length; y++) {
         if (y == arry[x].length-1) {
           tempOutput += arry[x][y] + "], [";
@@ -36,7 +45,7 @@ public class ArrayDemo {
         }
       }
       if (x == arry.length-1) {
-        System.out.print(tempOutput.substring(0, tempOutput.length()-4) + "]]");
+        System.out.print(tempOutput.substring(0, tempOutput.length()-4) + "]]\n");
       }
     }
   }
