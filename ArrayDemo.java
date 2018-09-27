@@ -14,8 +14,12 @@ public class ArrayDemo {
     int[][] arry2 = {{}, {}, {1, 1}}; // returns [[], [], [1, 1]]
     print2DArray(arry2);
 
-    int[][] array1 = {{0,0}, {}, {1, 2}, {1, 2, 0}}; //returns 3
+    int[][] array1 = {{0, 0}, {}, {1, 2}, {1, 2, 0}}; //returns 3
     System.out.println(countZeros2D(array1));
+    int[][] array2 = {{30}, {3}, {1}, {1, 2}}; //returns 0
+    System.out.println(countZeros2D(array2));
+
+
   }
 
   public static void print1DArray(int[] ary) { //0a. Make a function to print a 1D array of ints.
