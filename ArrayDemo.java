@@ -24,8 +24,8 @@ public class ArrayDemo {
     int[][] arr2 = {{1, 1, 1, 1}, {0}, {0, 0}}; //returns {{3, 1, 1, 1}, {1}, {1, 1}
     fill2D(arr2);
 
-
-
+    int[][] arr3 = {{1, 1, 1, 1}, {0}, {0, 0}};
+    fill2DCopy(arr3);
 
   }
 
@@ -75,7 +75,7 @@ public class ArrayDemo {
     return count;
   }
 
-  public static void fill2D(int[][] vals){ //2a. Fill the given 2-dimensional array
+  public static void fill2D(int[][] vals){ //2a. Fill the given 2-dimensional array of integers with 1's EXCEPT when the row number is the same as the column number: you must fill those with 3's instead.
     for (int x = 0; x < vals.length; x++) {
       for (int y = 0; y < vals[x].length; y++) {
         if (x == y) {
@@ -87,7 +87,13 @@ public class ArrayDemo {
       }
     }
     print2DArray(vals);
-
   }
 
+  public static void fill2DCopy(int[][] vals){ //2b. Make a new 2d array the same dimensions as the given parameter. Fill in the same way as the previous problem (1s and 3s)
+    int[][] output = new int[vals.length][];
+    for (int x = 0; x < vals.length; x++) {
+      output[x] = new int[vals[x].length];
+    }
+    fill2D(output);
+  }
 }
