@@ -1,7 +1,7 @@
 
 
 public class ArrayDemo {
-  public static void main(String[] args) {
+  public static void main(String[] args) { //tests for all solutions
     int[] ary = {1, 2, 3, 4};
     print1DArray(ary); //returns [1, 2, 3, 4]
     int[] ary2 = {-1, 0, };
@@ -18,6 +18,13 @@ public class ArrayDemo {
     System.out.println(countZeros2D(array1));
     int[][] array2 = {{30}, {3}, {1}, {1, 2}}; //returns 0
     System.out.println(countZeros2D(array2));
+
+    int[][] arr = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}; //returns {{3, 1, 1}, {1, 3, 1}, {1, 1, 3}}
+    fill2D(arr);
+    int[][] arr2 = {{1, 1, 1, 1}, {0}, {0, 0}}; //returns {{3, 1, 1, 1}, {1}, {1, 1}
+    fill2D(arr2);
+
+
 
 
   }
@@ -55,6 +62,7 @@ public class ArrayDemo {
       }
     }
   }
+
   public static int countZeros2D(int[][] nums){ //1. Calculate and return how many zeros are in the parameter (a rectangular 2D array of integers)
     int count = 0;
     for (int x = 0; x < nums.length; x++) {
@@ -65,6 +73,21 @@ public class ArrayDemo {
       }
     }
     return count;
+  }
+
+  public static void fill2D(int[][] vals){ //2a. Fill the given 2-dimensional array
+    for (int x = 0; x < vals.length; x++) {
+      for (int y = 0; y < vals[x].length; y++) {
+        if (x == y) {
+          vals[x][y] = 3;
+        }
+        else {
+          vals[x][y] = 1;
+        }
+      }
+    }
+    print2DArray(vals);
+
   }
 
 }
