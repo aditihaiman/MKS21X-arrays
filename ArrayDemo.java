@@ -14,6 +14,8 @@ public class ArrayDemo {
     int[][] arry2 = {{}, {}, {1, 1}}; // returns [[], [], [1, 1]]
     print2DArray(arry2);
 
+    int[][] array1 = {{0,0}, {}, {1, 2}, {1, 2, 0}}; //returns 3
+    System.out.println(countZeros2D(array1));
   }
 
   public static void print1DArray(int[] ary) { //0a. Make a function to print a 1D array of ints.
@@ -49,6 +51,16 @@ public class ArrayDemo {
       }
     }
   }
-
+  public static int countZeros2D(int[][] nums){ //1. Calculate and return how many zeros are in the parameter (a rectangular 2D array of integers)
+    int count = 0;
+    for (int x = 0; x < nums.length; x++) {
+      for (int y = 0; y < nums[x].length; y++) {
+        if (nums[x][y] == 0) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
 
 }
