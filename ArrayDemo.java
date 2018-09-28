@@ -21,11 +21,13 @@ public class ArrayDemo {
 
     int[][] arr = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}; //returns [[3, 1, 1], [1, 3, 1], [1, 1, 3]]
     fill2D(arr);
+    printArray(arr);
     int[][] arr2 = {{1, 1, 1, 1}, {0}, {0, 0}}; //returns [[3, 1, 1, 1], [1], [1, 1]]
     fill2D(arr2);
+    printArray(arr2);
 
     int[][] arr3 = {{3, 4, 5}, {-1}, {}}; //returns [[1, 1, 1], [3], []]
-    fill2DCopy(arr3);
+    printArray(fill2DCopy(arr3));
 
   }
 
@@ -42,7 +44,7 @@ public class ArrayDemo {
     System.out.print("]\n");
   }
 
-  public static void printArray(int[][]ary) { //0b. Make a function to print a 2d array of ints.
+  public static void printArray(int[][] ary) { //0b. Make a function to print a 2d array of ints.
     System.out.print("[[");
     String tempOutput = "";
     for (int x = 0; x < ary.length; x++) {
@@ -86,7 +88,6 @@ public class ArrayDemo {
         }
       }
     }
-    printArray(vals);
   }
 
   public static int[][] fill2DCopy(int[][] vals){ //2b. Make a new 2d array the same dimensions as the given parameter.
@@ -104,7 +105,6 @@ public class ArrayDemo {
         }
       }
     }
-    printArray(output);
     return output;
   }
 }
